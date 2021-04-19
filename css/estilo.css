@@ -1,0 +1,164 @@
+/*¿ ÍNDEX *************/
+/*¿ 0.- tipografías&colores *************/
+/*? font-family: 'Blinker', sans-serif; *************/
+/*? color: #447ece; *************/
+/*? color: #333; *************/
+/*? *************/
+/*¿ 0.- reset *************/
+/*¿ 1.- general *************/
+/*¿ 2.- header *************/
+/*¿ 3.- #triada *************/
+/*¿ 4.- #txtIntro *************/
+/*¿ 5.- #video *************/
+/*¿ 6.- #servicios *************/
+/*¿ 7.- #contacto *************/
+/*¿ 8.- footer *************/
+/*¿ 9.- @medias *************/
+/*- *********** *************/
+/*- 0.- reset *************/
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+transition: all 1s;
+/* overflow-x: hidden; */
+
+}
+
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: Anaphora;
+  src: url('../fonts/Anaphora-Regular-trial.ttf');
+}
+
+
+/****************************/
+
+body {
+  position: relative;
+  background-color: #FFF4DE;
+  font-family: Anaphora;
+}
+
+header {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.logo {
+  width: 260px;
+  object-fit: contain;
+  margin: 25px;
+  margin-bottom: 3em;
+}
+
+.girasoles {
+  width: 140px;
+  position: absolute;
+  bottom: 0;
+  left: 17%;
+}
+
+#rrss {
+  position: absolute;
+  top: 40%;
+  right: 17%;
+  color: #736D63;
+}
+
+#rrss i {
+  font-size: 50px;
+  margin-left: 15px;
+}
+
+#rrss p {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #736D63;
+  box-shadow: 0 0 15px #A69F94;
+  z-index: 10000;
+}
+
+nav ul {
+   text-align:center; 
+}
+nav li {
+  display: inline-block;
+  width: 11%;
+  color: #FFF5DE;
+  font-family: Anaphora;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+li img {
+  width: 65px;
+  padding: 3px;
+  vertical-align: middle;
+}
+
+nav a {
+  display: block;
+  height: 65px;
+  line-height: 65px;
+  font-size: 18px;
+}
+
+nav a:hover {
+  background-color: #D9D0C5;
+  color: #cc8e71;
+}
+
+#rrss a:hover {
+  color: #cc8e71;
+}
+
+nav ul li:first-child :hover {
+  background: none;
+}
+
+
+
+
+
+
+
+
+
+#uno {
+  height: 100vh;
+}
+
+#tres {
+  height: 100vh;
+  padding: 5%;
+}
+
+iframe {
+  width: 100%;
+  height: 60vh;
+}
