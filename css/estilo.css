@@ -1,14 +1,9 @@
 /*¿ ÍNDEX *************/
 /*¿ 0.- tipografías&colores *************/
-/*? font-family: 'Blinker', sans-serif; *************/
-/*? color: #447ece; *************/
-/*? color: #333; *************/
-/*? *************/
-/*¿ 0.- reset *************/
 /*¿ 1.- general *************/
 /*¿ 2.- header *************/
-/*¿ 3.- #triada *************/
-/*¿ 4.- #txtIntro *************/
+/*¿ 3.- menu *************/
+/*¿ 4.- body ***********/
 /*¿ 5.- #video *************/
 /*¿ 6.- #servicios *************/
 /*¿ 7.- #contacto *************/
@@ -17,7 +12,32 @@
 /*- *********** *************/
 /*- 0.- reset *************/
 
+/*¿ 0.- tipografías&colores *************/
 
+/* Variables de la paleta de colores de la web */
+:root {
+  --negro: #000;
+  --gris: #595959;
+  --marron-oscuro: #736D63;
+  --topo: #A69F94;
+  --marron-claro: #D9D0C5;
+  --beig: #FFF5DE;
+  --rosado: #F2B99F;
+  --rosado-oscuro:#CC8E71;
+}
+
+@font-face {
+  font-family: Anaphora Regular;
+  src: url('../fonts/Anaphora-Regular-trial.ttf');
+}
+
+@font-face {
+  font-family: Anaphora ExtraLight;
+  src: url('../fonts/Zetafonts\ -\ Anaphora\ ExtraLight\ Italic.ttf');
+}
+
+
+/*¿ 1.- general *************/
 
 * {
   margin: 0;
@@ -26,11 +46,13 @@
 }
 
 body {
-transition: all 1s;
-/* overflow-x: hidden; */
-
+  overflow-x: hidden;
+  position: relative;
+  background-color: #FFF4DE;
+  font-family: Anaphora Regular;
+  color: #595959;
+  z-index: 1;
 }
-
 
 ul, ol {
   list-style-type: none;
@@ -41,65 +63,42 @@ a {
   color: inherit;
 }
 
-@font-face {
-  font-family: Anaphora;
-  src: url('../fonts/Anaphora-Regular-trial.ttf');
-}
-
-
-/****************************/
-
-body {
-  position: relative;
-  background-color: #FFF4DE;
-  font-family: Anaphora;
-}
+/*¿ 2.- header *************/
 
 header {
+  height: 33vh;
   position: relative;
   margin: auto;
   text-align: center;
   width: 100%;
+  background-image: url('../img/header/bg2.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .logo {
-  width: 260px;
+  width: 22vh;
   object-fit: contain;
-  margin: 25px;
-  margin-bottom: 3em;
+  margin-bottom: 5em;
+  margin-top: 2em;
 }
 
-.girasoles {
+/* .girasoles {
   width: 140px;
   position: absolute;
   bottom: 0;
   left: 17%;
-}
+} */
 
-#rrss {
-  position: absolute;
-  top: 40%;
-  right: 17%;
-  color: #736D63;
-}
-
-#rrss i {
-  font-size: 50px;
-  margin-left: 15px;
-}
-
-#rrss p {
-  font-size: 30px;
-  font-weight: bold;
-  padding-bottom: 8px;
-}
+/*¿ 3.- menu *************/
 
 nav {
   position: sticky;
   top: 0;
   left: 0;
-  background-color: #736D63;
-  box-shadow: 0 0 15px #A69F94;
+  background-color: var(--marron-oscuro);
+  box-shadow: 0px 15px 10px -15px var(--topo);
   z-index: 10000;
 }
 
@@ -109,8 +108,7 @@ nav ul {
 nav li {
   display: inline-block;
   width: 11%;
-  color: #FFF5DE;
-  font-family: Anaphora;
+  color: var(--beig);
   font-weight: bold;
   vertical-align: middle;
 }
@@ -121,39 +119,235 @@ li img {
   vertical-align: middle;
 }
 
+/* Animación menú basada en https://codepen.io/littlesnippets/pen/OyxyRG */
 nav a {
   display: block;
-  height: 65px;
-  line-height: 65px;
-  font-size: 18px;
+  height: 11vh;
+  line-height: 12vh;
+  font-size: 20px;
+  position: relative;
+    -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+nav a:before,
+nav a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+nav a:before {
+  bottom: 0;
+  display: block;
+  height: 3px;
+  width: 0%;
+  content: "";
+  background-color: var(--rosado-oscuro);
+}
+
+nav a:hover:before {
+  opacity: 1;
+  width: 100%;
 }
 
 nav a:hover {
-  background-color: #D9D0C5;
-  color: #cc8e71;
+  color: var(--rosado);
 }
 
-#rrss a:hover {
-  color: #cc8e71;
+nav ul li:first-child {
+  display: none;
 }
-
 nav ul li:first-child :hover {
   background: none;
 }
 
+/*¿ 4.- body ***********/
+
+#content {
+  background-image: url(../img/otros/bg2.png);
+  background-size: contain;
+}
+
+
+#sant-jordi {
+  margin-top: 2vh;
+  height: 52vh;
+  box-shadow: inset 0px 0px 143px 56px rgb(41, 38, 38);
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+#sant-jordi::before {
+  background-image: url('../img/sant-jordi/banner.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+#sant-jordi h3 {
+  padding: 3.5em 0 1.5em 3.5em;
+  margin-left: 3.5em;
+  font-size: 30px;
+  font-family: Anaphora ExtraLight;
+  line-height: 1.5em;
+  color: var(--beig);
+}
+
+#sant-jordi h2 {
+  margin-left: 7em;
+  font-size: 50px;
+  font-family: Anaphora Regular;
+  color: rgb(245, 42, 42);
+  text-shadow: 1.5px 2px black;
+}
+
+#sant-jordi img {
+  display: inline-block;
+  position: absolute;
+  left: 30em; 
+}
+
+
+#galeria-frases {
+  padding-top: 10vh;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(2, 50%);
+  grid-template-areas: 
+  "uno dos tres"
+  "cuatro cinco seis";
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  column-gap: 2em;
+}
+
+#galeria-frases img {
+  height: 100%;
+  width: auto;
+  padding: 20px;
+  transition: 1s;
+  border-radius: 25px;
+}
+
+
+#galeria-frases p {
+  width: 45%;
+  font-size: 25px;
+  font-style: italic;
+  text-align: center;
+}
+
+#galeria-frases img:nth-of-type(1),
+#galeria-frases img:nth-of-type(4),
+#galeria-frases p:nth-of-type(1),
+#galeria-frases p:nth-of-type(4) {
+  justify-self: end;
+}
+
+#galeria-frases img:nth-of-type(3),
+#galeria-frases img:nth-of-type(6),
+#galeria-frases p:nth-of-type(3),
+#galeria-frases p:nth-of-type(6) {
+  justify-self: start;
+}
+
+#galeria-frases p:nth-of-type(1),
+#galeria-frases p:nth-of-type(4) {
+  margin-right: 35px;
+}
+
+#galeria-frases p:nth-of-type(3),
+#galeria-frases p:nth-of-type(6) {
+  margin-left: 35px;
+}
+
+#galeria-frases img:nth-of-type(2),
+#galeria-frases img:nth-of-type(4),
+#galeria-frases img:nth-of-type(6) {
+  opacity: 0;
+}
+
+#galeria-frases p:nth-of-type(1),
+#galeria-frases p:nth-of-type(3),
+#galeria-frases p:nth-of-type(5) {
+  z-index: -1;
+}
+
+
+#galeria-frases img:nth-of-type(1),
+#galeria-frases p:nth-of-type(1) {
+  grid-area: uno;
+}
+
+#galeria-frases img:nth-of-type(2),
+#galeria-frases p:nth-of-type(2) {
+  grid-area: dos;
+} 
+
+#galeria-frases img:nth-of-type(3),
+#galeria-frases p:nth-of-type(3) {
+  grid-area: tres;
+} 
+
+#galeria-frases img:nth-of-type(4),
+#galeria-frases p:nth-of-type(4) {
+  grid-area: cuatro;
+} 
+
+#galeria-frases img:nth-of-type(5),
+#galeria-frases p:nth-of-type(5) {
+  grid-area: cinco;
+}
+
+#galeria-frases img:nth-of-type(6),
+#galeria-frases p:nth-of-type(6) {
+  grid-area: seis;
+} 
+
+#galeria-frases img:nth-of-type(1):hover,
+#galeria-frases img:nth-of-type(3):hover,
+#galeria-frases img:nth-of-type(5):hover {
+  opacity: 0;
+  cursor: pointer;
+  transition: 2s;
+}
+
+#galeria-frases p:nth-of-type(2):hover,
+#galeria-frases p:nth-of-type(4):hover,
+#galeria-frases p:nth-of-type(6):hover {
+  display: none;
+  cursor: pointer;
+  transition: 2s;
+}
+
+#galeria-frases img:nth-of-type(2):hover,
+#galeria-frases img:nth-of-type(4):hover,
+#galeria-frases img:nth-of-type(6):hover {
+  opacity: 1;
+
+  cursor: pointer;
+  transition: 2s;
+}
 
 
 
-
-
-
-
-
-#uno {
+#dos {
   height: 100vh;
 }
 
-#tres {
+#contacto {
   height: 100vh;
   padding: 5%;
 }
@@ -161,4 +355,28 @@ nav ul li:first-child :hover {
 iframe {
   width: 100%;
   height: 60vh;
+}
+
+
+footer {
+  height: 50vh;
+}
+
+#rrss {
+  color: var(--marron-oscuro);
+}
+
+#rrss i {
+  font-size: 40px;
+  margin-left: 15px;
+}
+
+#rrss p {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+#rrss a:hover {
+  color: var(--rosado);
 }
